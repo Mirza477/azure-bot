@@ -5,7 +5,7 @@ import os
 OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT", "https://akuai.openai.azure.com/")
 OPENAI_KEY = os.getenv("OPENAI_KEY", "ec1d7395a75c480d9bc0d1dec7e9d331")
 OPENAI_EMBEDDINGS_DEPLOYMENT = os.getenv("OPENAI_EMBEDDINGS_DEPLOYMENT", "aku-text-embedding-ada-002")
-OPENAI_COMPLETIONS_DEPLOYMENT = os.getenv("OPENAI_COMPLETIONS_DEPLOYMENT", "gpt-35-turbo-rag")
+OPENAI_COMPLETIONS_DEPLOYMENT = os.getenv("OPENAI_COMPLETIONS_DEPLOYMENT", "gpt-4-rag")
 
 # Cosmos DB settings – update with your account info.
 COSMOS_URI = os.getenv("COSMOS_URI", "https://akurag1.documents.azure.com:443/")
