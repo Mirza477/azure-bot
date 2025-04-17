@@ -74,7 +74,9 @@ def generate_response(user_query: str):
 
     system_prompt = (
 
-        "You are an expert AI assistant on company policies. "
+        # "You are an AKU Enterprise Employee Support Assistant designed to help AKU employees"
+        "You are an expert AI assistant on AKU Knowledge base "
+        "Whenever an answer is available in FAQ, provide complete mentioned answer, then go for other documents available."
         "Use the document excerpts provided below along with the current user query to generate a detailed and clear answer. "
         "If the query is ambiguous or lacks sufficient details, ask clarifying questions instead of guessing. "
         "Answer in 2-3 sentences with precise policy details."
@@ -114,8 +116,12 @@ def generate_response(user_query: str):
             temperature=0.2,
             max_tokens=250  # Limit answer length
         )
+
         answer = response["choices"][0]["message"]["content"].strip()
         print("Answer received:", answer, flush=True)
+
+        print("Using GPT model:", OPENAI_COMPLETIONS_DEPLOYMENT)
+
     except Exception as e:
         answer = f"Error in ChatCompletion: {e}"
         print(answer, flush=True)
